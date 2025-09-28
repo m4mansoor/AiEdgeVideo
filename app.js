@@ -1,4 +1,4 @@
-// Presentation Navigation JavaScript for 23-slide presentation
+// Presentation Navigation JavaScript - 23 Slides
 class PresentationController {
     constructor() {
         this.currentSlide = 1;
@@ -143,7 +143,7 @@ class PresentationController {
         // Add animation classes with delays
         setTimeout(() => {
             const elementsToAnimate = currentSlideElement.querySelectorAll(
-                '.feature-box, .spec-box, .feature-item, .advantage-box, .deliverable, .risk-item, .conclusion-item, .step-item'
+                '.spec-card, .feature-category, .milestone, .risk-item, .step, .conclusion-points li, .software-box, .component-group, .phase-item'
             );
             
             elementsToAnimate.forEach((element, index) => {
@@ -151,7 +151,7 @@ class PresentationController {
                     element.classList.add('animate-in');
                 }, index * 100);
             });
-        }, 200);
+        }, 300);
     }
     
     updateSlideCounter() {
@@ -199,36 +199,48 @@ class PresentationController {
 function addElementAnimations() {
     const style = document.createElement('style');
     style.textContent = `
-        .feature-box,
-        .spec-box,
-        .feature-item,
-        .advantage-box,
-        .deliverable,
+        .animate-in {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .spec-card,
+        .feature-category,
+        .milestone,
         .risk-item,
-        .conclusion-item,
-        .step-item {
+        .step,
+        .conclusion-points li,
+        .software-box,
+        .component-group,
+        .phase-item {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease-out;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
         }
         
-        .feature-box:hover,
-        .spec-box:hover,
-        .advantage-box:hover {
-            transform: translateY(-4px);
-        }
-        
-        .feature-item:hover {
-            transform: translateX(8px);
+        .spec-card:hover,
+        .milestone:hover,
+        .software-box:hover {
+            transform: translateY(-8px);
         }
         
         /* Slide transition improvements */
         .slide {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         .slide.active {
-            animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         
         .slide.prev {
@@ -238,7 +250,7 @@ function addElementAnimations() {
         @keyframes slideIn {
             from {
                 opacity: 0;
-                transform: translateX(30px);
+                transform: translateX(50px);
             }
             to {
                 opacity: 1;
@@ -253,13 +265,13 @@ function addElementAnimations() {
             }
             to {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-50px);
             }
         }
         
         /* Progress bar animation */
         .progress-fill {
-            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
         /* Navigation button interactions */
@@ -268,18 +280,36 @@ function addElementAnimations() {
         }
         
         .nav-btn:hover:not(:disabled) {
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px) scale(1.05);
         }
         
         .nav-btn:active:not(:disabled) {
             transform: translateY(0) scale(0.98);
         }
         
+        /* Slide content hover effects */
+        .feature-list li:hover {
+            transform: translateX(8px);
+        }
+        
+        .power-features li:hover {
+            padding-left: var(--space-12);
+        }
+        
+        /* Enhanced card hover effects */
+        .spec-card,
+        .milestone,
+        .feature-category,
+        .component-group,
+        .software-box {
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
         /* Loading animation for presentation start */
         @keyframes fadeInPresentation {
             from {
                 opacity: 0;
-                transform: scale(0.98);
+                transform: scale(0.95);
             }
             to {
                 opacity: 1;
@@ -288,23 +318,17 @@ function addElementAnimations() {
         }
         
         .presentation-container {
-            animation: fadeInPresentation 0.6s ease-out;
+            animation: fadeInPresentation 0.8s ease-out;
         }
         
         /* Responsive animations */
         @media (max-width: 768px) {
             .animate-in {
-                animation-duration: 0.3s;
+                animation-duration: 0.4s;
             }
             
             .slide {
                 transition-duration: 0.3s;
-            }
-            
-            .feature-box:hover,
-            .spec-box:hover,
-            .advantage-box:hover {
-                transform: translateY(-2px);
             }
         }
         
@@ -316,6 +340,28 @@ function addElementAnimations() {
         
         .slide:focus {
             outline: 2px solid transparent;
+        }
+        
+        /* Print styles */
+        @media print {
+            .nav-controls,
+            .progress-bar {
+                display: none;
+            }
+            
+            .slide {
+                position: static !important;
+                opacity: 1 !important;
+                transform: none !important;
+                page-break-after: always;
+                height: auto !important;
+                padding: 20px !important;
+            }
+            
+            .presentation-container {
+                background: white !important;
+                color: black !important;
+            }
         }
     `;
     document.head.appendChild(style);
@@ -339,7 +385,7 @@ function addKeyboardHints() {
         transition: opacity 0.3s ease;
         pointer-events: none;
     `;
-    hints.innerHTML = 'Use ← → arrow keys, spacebar, or click to navigate • 23 focused slides';
+    hints.innerHTML = 'Use ← → arrow keys, spacebar, or click to navigate • 23 slides total';
     document.body.appendChild(hints);
     
     // Show hints briefly on load
@@ -347,7 +393,7 @@ function addKeyboardHints() {
         hints.style.opacity = '0.7';
         setTimeout(() => {
             hints.style.opacity = '0';
-        }, 3000);
+        }, 4000);
     }, 1000);
 }
 
@@ -386,27 +432,100 @@ function addTouchSupport(controller) {
     }, { passive: true });
 }
 
-// Auto-resize content to prevent overflow
-function ensureContentFits() {
-    const slides = document.querySelectorAll('.slide-content');
+// Slide content detection for better animations
+function detectSlideContent(slideElement) {
+    const slideType = {
+        hasSpecs: slideElement.querySelector('.specs-grid') !== null,
+        hasTimeline: slideElement.querySelector('.timeline-layout') !== null,
+        hasRisks: slideElement.querySelector('.risks-layout') !== null,
+        hasSoftware: slideElement.querySelector('.software-boxed-layout') !== null,
+        hasHardware: slideElement.querySelector('.hardware-layout') !== null,
+        hasAI: slideElement.querySelector('.ai-features-grid') !== null,
+        isTitle: slideElement.querySelector('.title-slide') !== null,
+        isConclusion: slideElement.querySelector('.conclusion-slide') !== null
+    };
     
-    slides.forEach((slide, index) => {
-        const slideHeight = slide.scrollHeight;
-        const containerHeight = window.innerHeight * 0.85; // 85% of viewport
+    return slideType;
+}
+
+// Enhanced slide navigation with content-aware animations
+function enhanceSlideTransitions(controller) {
+    const originalShowSlide = controller.showSlide.bind(controller);
+    
+    controller.showSlide = function(slideNumber, previousSlideNumber = null) {
+        originalShowSlide(slideNumber, previousSlideNumber);
         
-        if (slideHeight > containerHeight) {
-            console.warn(`Slide ${index + 1} content height (${slideHeight}px) exceeds container (${containerHeight}px)`);
+        const currentSlideElement = this.slides[slideNumber - 1];
+        const slideType = detectSlideContent(currentSlideElement);
+        
+        // Add content-specific animations
+        setTimeout(() => {
+            if (slideType.isTitle) {
+                const title = currentSlideElement.querySelector('.main-title');
+                const subtitle = currentSlideElement.querySelector('.subtitle');
+                if (title) title.style.animation = 'slideInUp 0.8s ease-out forwards';
+                if (subtitle) setTimeout(() => {
+                    subtitle.style.animation = 'slideInUp 0.6s ease-out forwards';
+                }, 200);
+            }
             
-            // Reduce font sizes slightly if content is too tall
-            const textElements = slide.querySelectorAll('p, li, .feature-item p, .spec-box p');
-            textElements.forEach(el => {
-                const currentSize = parseFloat(window.getComputedStyle(el).fontSize);
-                if (currentSize > 14) {
-                    el.style.fontSize = Math.max(14, currentSize - 2) + 'px';
-                }
-            });
+            if (slideType.hasSpecs) {
+                const cards = currentSlideElement.querySelectorAll('.spec-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate-in');
+                    }, index * 150);
+                });
+            }
+            
+            if (slideType.hasTimeline) {
+                const milestones = currentSlideElement.querySelectorAll('.milestone, .phase-item');
+                milestones.forEach((milestone, index) => {
+                    setTimeout(() => {
+                        milestone.classList.add('animate-in');
+                    }, index * 200);
+                });
+            }
+            
+            if (slideType.hasSoftware) {
+                const boxes = currentSlideElement.querySelectorAll('.software-box');
+                boxes.forEach((box, index) => {
+                    setTimeout(() => {
+                        box.classList.add('animate-in');
+                    }, index * 100);
+                });
+            }
+        }, 100);
+    };
+}
+
+// Slide progress tracking and analytics
+function addSlideAnalytics(controller) {
+    const slideTimings = {};
+    let slideStartTime = Date.now();
+    
+    const originalGoToSlide = controller.goToSlide.bind(controller);
+    
+    controller.goToSlide = function(slideNumber) {
+        // Track time spent on previous slide
+        if (this.currentSlide) {
+            const timeSpent = Date.now() - slideStartTime;
+            slideTimings[this.currentSlide] = (slideTimings[this.currentSlide] || 0) + timeSpent;
         }
-    });
+        
+        slideStartTime = Date.now();
+        originalGoToSlide(slideNumber);
+    };
+    
+    // Expose analytics
+    controller.getSlideAnalytics = function() {
+        return {
+            timings: slideTimings,
+            totalSlides: this.totalSlides,
+            currentSlide: this.currentSlide,
+            averageTimePerSlide: Object.values(slideTimings).reduce((a, b) => a + b, 0) / Object.keys(slideTimings).length || 0
+        };
+    };
 }
 
 // Initialize presentation when DOM is loaded
@@ -417,19 +536,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the presentation controller
     const presentation = new PresentationController();
     
+    // Enhance with additional features
+    enhanceSlideTransitions(presentation);
+    addSlideAnalytics(presentation);
+    
     // Add touch support for mobile
     addTouchSupport(presentation);
     
     // Add keyboard hints
     addKeyboardHints();
-    
-    // Ensure content fits properly
-    ensureContentFits();
-    
-    // Re-check content fit on window resize
-    window.addEventListener('resize', () => {
-        setTimeout(ensureContentFits, 100);
-    });
     
     // Global error handling
     window.addEventListener('error', (e) => {
@@ -458,74 +573,62 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.touches.length < 2) {
             e.preventDefault();
         }
-    }, { passive: false });
+    });
     
-    // Add slide number indicators for easier navigation
-    function addSlideIndicators() {
-        const indicators = document.createElement('div');
-        indicators.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 4px;
-            z-index: 1000;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        `;
-        
-        for (let i = 1; i <= 23; i++) {
-            const dot = document.createElement('div');
-            dot.style.cssText = `
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: ${i === 1 ? 'var(--color-primary)' : 'var(--color-gray-300)'};
-                cursor: pointer;
-                transition: all 0.2s ease;
-            `;
-            
-            dot.addEventListener('click', () => {
-                presentation.goToSlide(i);
-                updateIndicators(i);
-            });
-            
-            indicators.appendChild(dot);
+    // Add slide number shortcuts (1-23)
+    document.addEventListener('keydown', (e) => {
+        // Check if user pressed a number key (1-9)
+        const keyNum = parseInt(e.key);
+        if (keyNum >= 1 && keyNum <= 9 && !e.ctrlKey && !e.altKey && !e.metaKey) {
+            presentation.goToSlide(keyNum);
         }
         
-        document.body.appendChild(indicators);
-        
-        function updateIndicators(activeSlide) {
-            const dots = indicators.children;
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].style.background = i + 1 === activeSlide ? 
-                    'var(--color-primary)' : 'var(--color-gray-300)';
+        // Handle 10-23 with Ctrl+number
+        if (e.ctrlKey && keyNum >= 0 && keyNum <= 9) {
+            let targetSlide;
+            if (keyNum === 0) targetSlide = 10;
+            else targetSlide = 10 + keyNum;
+            
+            if (targetSlide <= presentation.totalSlides) {
+                presentation.goToSlide(targetSlide);
             }
         }
+    });
+    
+    // Auto-save presentation progress in session
+    let progressSaveTimer;
+    const originalGoToSlide = presentation.goToSlide.bind(presentation);
+    presentation.goToSlide = function(slideNumber) {
+        originalGoToSlide(slideNumber);
         
-        // Update indicators when slide changes
-        const originalGoToSlide = presentation.goToSlide.bind(presentation);
-        presentation.goToSlide = function(slideNumber) {
-            originalGoToSlide(slideNumber);
-            updateIndicators(slideNumber);
-        };
-        
-        indicators.addEventListener('mouseenter', () => {
-            indicators.style.opacity = '1';
-        });
-        
-        indicators.addEventListener('mouseleave', () => {
-            indicators.style.opacity = '0.6';
-        });
+        // Debounced save to session storage (if available)
+        clearTimeout(progressSaveTimer);
+        progressSaveTimer = setTimeout(() => {
+            try {
+                sessionStorage.setItem('presentation-slide', slideNumber);
+            } catch (e) {
+                // SessionStorage not available in sandbox
+            }
+        }, 500);
+    };
+    
+    // Restore presentation progress on load
+    try {
+        const savedSlide = sessionStorage.getItem('presentation-slide');
+        if (savedSlide && parseInt(savedSlide) > 1) {
+            setTimeout(() => {
+                presentation.goToSlide(parseInt(savedSlide));
+            }, 100);
+        }
+    } catch (e) {
+        // SessionStorage not available in sandbox
     }
     
-    // Add slide indicators
-    addSlideIndicators();
-    
     console.log('🚀 AI-Powered Edge Content Device Presentation Loaded');
-    console.log('📊 23 focused slides with light theme and no scrolling');
-    console.log('Navigation: Arrow keys, Space, Page Up/Down, Home, End, Escape');
-    console.log('Click slides, use navigation buttons, or click dots to navigate');
-    console.log('Current slide:', presentation.getCurrentSlideInfo());
+    console.log('📊 23 Slides Total - Complete Technical Proposal');
+    console.log('🎮 Navigation: Arrow keys, Space, Page Up/Down, Home, End, Escape');
+    console.log('🔢 Quick jump: Number keys 1-9, Ctrl+0-9 for slides 10-23');
+    console.log('📱 Touch: Swipe left/right on mobile devices');
+    console.log('📄 Current slide:', presentation.getCurrentSlideInfo());
+    console.log('⏱️ Analytics available via: presentationController.getSlideAnalytics()');
 });
