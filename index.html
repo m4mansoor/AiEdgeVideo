@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Edge Content Device - Project Proposal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Navigation Controls -->
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn">‹</button>
+            <span class="slide-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">23</span>
+            </span>
+            <button class="nav-btn" id="nextBtn">›</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Slides Container -->
+        <div class="slides-container" id="slidesContainer">
+            
+            <!-- Slide 1: Title -->
+            <div class="slide active" data-slide="1">
+                <div class="slide-content title-slide">
+                    <div class="title-box">
+                        <h1 class="main-title">AI-Powered Edge Content Device</h1>
+                        <h2 class="subtitle">for Influencers</h2>
+                        <div class="project-info-box">
+                            <p class="project-type">Project Proposal Document</p>
+                            <p class="revision-note">(Revised Man Hours)</p>
+                        </div>
+                        <div class="company-box">
+                            <div class="company-brand">TechCorp Innovation Labs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Executive Summary -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <h1 class="slide-title">Executive Summary</h1>
+                    <div class="content-box">
+                        <p class="overview-text">All-in-one content creation platform combining AI edge computing with portable power solutions for automatic recording, editing, and optimization.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Key Features -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <h1 class="slide-title">Key Features</h1>
+                    <div class="features-grid">
+                        <div class="feature-box">
+                            <div class="feature-icon">⚙️</div>
+                            <h3>AI Edge Computing</h3>
+                            <p>Portable power with intelligent processing</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🎥</div>
+                            <h3>Automatic Processing</h3>
+                            <p>Video processing and platform optimization</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Real-time Enhancement</h3>
+                            <p>Content enhancement and editing</p>
+                        </div>
+                        <div class="feature-box">
+                            <div class="feature-icon">🔋</div>
+                            <h3>Dual Function</h3>
+                            <p>Powerbank capability for extended use</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: CPU Specifications -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <h1 class="slide-title">Processing Unit - CPU Specifications</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>Processor</h4>
+                            <p>Quad-core ARM Cortex-A57 @ 1.43 GHz</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Architecture</h4>
+                            <p>64-bit ARMv8</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Memory</h4>
+                            <p>4GB LPDDR4 with 25.6 GB/s bandwidth</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Operating System</h4>
+                            <p>Ubuntu-based JetPack SDK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: GPU & AI Specifications -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <h1 class="slide-title">Processing Unit - GPU & AI Specifications</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>GPU</h4>
+                            <p>128-core NVIDIA Maxwell architecture</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>AI Performance</h4>
+                            <p>472 GFLOPS for real-time AI inference</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>AI Frameworks</h4>
+                            <p>TensorRT, CUDA, cuDNN, OpenCV</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Power Consumption</h4>
+                            <p>5W-10W operational modes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Battery Specifications -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <h1 class="slide-title">Power Management - Battery Specifications</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>Battery Type</h4>
+                            <p>Lipox4 6000 mAh Li-Polymer</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Capacity</h4>
+                            <p>6000mAh @ 3.7V nominal voltage</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Dimensions</h4>
+                            <p>67mm × 55mm × 12mm</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Weight</h4>
+                            <p>Approximately 370g</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Charging & Performance -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <h1 class="slide-title">Power Management - Charging & Performance</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>Standard Charging</h4>
+                            <p>0.2C (1.2A) normal rate</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Fast Charging</h4>
+                            <p>0.5C (3A) rapid charging</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Battery Life</h4>
+                            <p>4-6 hours continuous operation</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Mixed Usage</h4>
+                            <p>8-10 hours (4h AI + 4h powerbank)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: AI Features - Video Processing -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <h1 class="slide-title">AI Features - Video Processing</h1>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <p>Silence Detection: Auto-removes dead space and long pauses</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Jump Cut Generation: AI identifies optimal cut points</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Real-time Stabilization: Advanced optical flow algorithms</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Quality Enhancement: AI upscaling and noise reduction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: AI Features - Content Optimization -->
+            <div class="slide" data-slide="9">
+                <div class="slide-content">
+                    <h1 class="slide-title">AI Features - Content Optimization</h1>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <p>Format Adaptation: Platform-specific sizing (TikTok 9:16, Instagram 1:1, YouTube 16:9)</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Auto-Captions: Multi-language speech-to-text processing</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Trend Integration: AI analysis and application of trending effects</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Smart Cropping: Content-aware cropping maintaining subject focus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: Edge Computing Advantages -->
+            <div class="slide" data-slide="10">
+                <div class="slide-content">
+                    <h1 class="slide-title">Edge Computing Advantages</h1>
+                    <div class="advantages-grid">
+                        <div class="advantage-box">
+                            <div class="advantage-icon">🔒</div>
+                            <h3>Privacy Protection</h3>
+                            <p>No cloud uploads required - all processing on device</p>
+                        </div>
+                        <div class="advantage-box">
+                            <div class="advantage-icon">⚡</div>
+                            <h3>Zero Latency</h3>
+                            <p>Real-time processing without internet dependency</p>
+                        </div>
+                        <div class="advantage-box">
+                            <div class="advantage-icon">💰</div>
+                            <h3>Cost Efficiency</h3>
+                            <p>No cloud processing fees or data transfer costs</p>
+                        </div>
+                        <div class="advantage-box">
+                            <div class="advantage-icon">🌐</div>
+                            <h3>Offline Reliability</h3>
+                            <p>Works in areas with limited connectivity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Hardware Design - Form Factor & Build -->
+            <div class="slide" data-slide="11">
+                <div class="slide-content">
+                    <h1 class="slide-title">Hardware Design - Form Factor & Build</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>Dimensions</h4>
+                            <p>150mm × 100mm × 30mm</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Size Reference</h4>
+                            <p>iPhone 14 Pro Max dimensions</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Total Weight</h4>
+                            <p>850g (including battery & enclosure)</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Material</h4>
+                            <p>Aluminum chassis with heat dissipation fins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 12: Hardware Design - Camera System -->
+            <div class="slide" data-slide="12">
+                <div class="slide-content">
+                    <h1 class="slide-title">Hardware Design - Camera System</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>Sensor</h4>
+                            <p>12MP IMX477 with MIPI CSI-2 interface</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Video Capability</h4>
+                            <p>4K@30fps, 1080p@60fps recording</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Lens System</h4>
+                            <p>Variable focus with optical stabilization</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Field of View</h4>
+                            <p>120° ultra-wide for comprehensive capture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 13: Hardware Design - User Interface -->
+            <div class="slide" data-slide="13">
+                <div class="slide-content">
+                    <h1 class="slide-title">Hardware Design - User Interface</h1>
+                    <div class="specs-grid">
+                        <div class="spec-box">
+                            <h4>Display</h4>
+                            <p>3.5" touchscreen LCD for live preview</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Physical Controls</h4>
+                            <p>Power button, record trigger, mode selector</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Connectivity</h4>
+                            <p>Wi-Fi, Bluetooth, USB-C, HDMI output</p>
+                        </div>
+                        <div class="spec-box">
+                            <h4>Storage</h4>
+                            <p>MicroSD up to 512GB expansion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 14: Software Architecture - Operating System -->
+            <div class="slide" data-slide="14">
+                <div class="slide-content">
+                    <h1 class="slide-title">Software Architecture - Operating System</h1>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <p>Optimized Linux distribution based on JetPack SDK</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Custom kernel optimizations for low-latency processing</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>TensorRT acceleration for neural network inference</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Hardware-accelerated NVENC/NVDEC encoding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 15: Software Architecture - AI Models -->
+            <div class="slide" data-slide="15">
+                <div class="slide-content">
+                    <h1 class="slide-title">Software Architecture - AI Models</h1>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <p>Video Analysis: Trained on 10M+ social media clips</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Speech Recognition: Whisper-based Jetson optimization</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Style Transfer: Lightweight GAN real-time effects</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Object Detection: YOLO-based subject tracking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 16: Software Architecture - Content Intelligence -->
+            <div class="slide" data-slide="16">
+                <div class="slide-content">
+                    <h1 class="slide-title">Software Architecture - Content Intelligence</h1>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <p>Scene Classification: Auto-tagging and organization</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Engagement Prediction: AI viral potential scoring</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Trend Analysis: Popular content pattern recognition</p>
+                        </div>
+                        <div class="feature-item">
+                            <p>Hashtag Generation: Contextual content-based tags</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 17: Development Plan - Overview -->
+            <div class="slide" data-slide="17">
+                <div class="slide-content">
+                    <h1 class="slide-title">Development Plan - Overview</h1>
+                    <div class="overview-box">
+                        <div class="total-hours">
+                            <h3>Total Development Hours: 4,000</h3>
+                        </div>
+                        <div class="team-list">
+                            <div class="team-member">Hardware/Embedded Engineers: 4 FTE</div>
+                            <div class="team-member">AI/ML Engineers: 3 FTE</div>
+                            <div class="team-member">Software Engineers: 3 FTE</div>
+                            <div class="team-member">UI/UX Engineers: 1 FTE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 18: Development Plan - Milestone 1 -->
+            <div class="slide" data-slide="18">
+                <div class="slide-content">
+                    <h1 class="slide-title">Development Plan - Milestone 1</h1>
+                    <div class="milestone-box">
+                        <div class="milestone-header">
+                            <h3>Hardware Platform Design</h3>
+                            <div class="milestone-stats">
+                                <span class="hours">1,400 hours</span>
+                                <span class="percentage">35%</span>
+                            </div>
+                        </div>
+                        <div class="deliverables-list">
+                            <div class="deliverable">Jetson Nano carrier board design</div>
+                            <div class="deliverable">Battery management with dual-mode switching</div>
+                            <div class="deliverable">Thermal management and cooling system</div>
+                            <div class="deliverable">Camera integration (MIPI CSI interface)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 19: Development Plan - Milestone 2 -->
+            <div class="slide" data-slide="19">
+                <div class="slide-content">
+                    <h1 class="slide-title">Development Plan - Milestone 2</h1>
+                    <div class="milestone-box">
+                        <div class="milestone-header">
+                            <h3>Core AI Model Development</h3>
+                            <div class="milestone-stats">
+                                <span class="hours">1,800 hours</span>
+                                <span class="percentage">45%</span>
+                            </div>
+                        </div>
+                        <div class="deliverables-list">
+                            <div class="deliverable">Neural networks for Jetson Nano deployment</div>
+                            <div class="deliverable">Real-time video processing pipeline</div>
+                            <div class="deliverable">Multi-language speech-to-text system</div>
+                            <div class="deliverable">Advanced stabilization algorithms</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 20: Development Plan - Milestone 3 -->
+            <div class="slide" data-slide="20">
+                <div class="slide-content">
+                    <h1 class="slide-title">Development Plan - Milestone 3</h1>
+                    <div class="milestone-box">
+                        <div class="milestone-header">
+                            <h3>Software Integration & Testing</h3>
+                            <div class="milestone-stats">
+                                <span class="hours">800 hours</span>
+                                <span class="percentage">20%</span>
+                            </div>
+                        </div>
+                        <div class="deliverables-list">
+                            <div class="deliverable">Intuitive touchscreen interface</div>
+                            <div class="deliverable">Intelligent file management system</div>
+                            <div class="deliverable">Social media platform integration APIs</div>
+                            <div class="deliverable">Comprehensive testing and validation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 21: Risk Assessment - Technical Risks -->
+            <div class="slide" data-slide="21">
+                <div class="slide-content">
+                    <h1 class="slide-title">Risk Assessment - Technical Risks</h1>
+                    <div class="risks-list">
+                        <div class="risk-item">
+                            <h4>Processing Performance Limitations</h4>
+                            <p><strong>Mitigation:</strong> Focus on essential AI functions and optimize for efficiency</p>
+                        </div>
+                        <div class="risk-item">
+                            <h4>Limited Testing Coverage</h4>
+                            <p><strong>Mitigation:</strong> Implement automated testing and critical path focus</p>
+                        </div>
+                        <div class="risk-item">
+                            <h4>System Integration Complexity</h4>
+                            <p><strong>Mitigation:</strong> Phased integration approach with core functionality priority</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 22: Risk Assessment - Development Risks -->
+            <div class="slide" data-slide="22">
+                <div class="slide-content">
+                    <h1 class="slide-title">Risk Assessment - Development Risks</h1>
+                    <div class="risks-list">
+                        <div class="risk-item">
+                            <h4>Resource Budget Constraints</h4>
+                            <p><strong>Mitigation:</strong> Detailed milestone tracking with agile development practices</p>
+                        </div>
+                        <div class="risk-item">
+                            <h4>Feature Scope Management</h4>
+                            <p><strong>Mitigation:</strong> MVP approach focusing on essential content creation features</p>
+                        </div>
+                        <div class="risk-item">
+                            <h4>Timeline Management</h4>
+                            <p><strong>Mitigation:</strong> Regular reviews and adaptive planning with stakeholder alignment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 23: Conclusion & Next Steps -->
+            <div class="slide" data-slide="23">
+                <div class="slide-content">
+                    <h1 class="slide-title">Conclusion & Next Steps</h1>
+                    <div class="conclusion-section">
+                        <div class="conclusion-box">
+                            <h3>Key Conclusions</h3>
+                            <div class="conclusion-item">Innovative portable content creation within 4,000 hour budget</div>
+                            <div class="conclusion-item">Streamlined development focusing on essential functionality</div>
+                            <div class="conclusion-item">Unique dual-functionality as content tool and powerbank</div>
+                            <div class="conclusion-item">Strong foundation for future market expansion</div>
+                        </div>
+                        <div class="next-steps-box">
+                            <h3>Next Steps</h3>
+                            <div class="step-item">Secure development team and begin hardware design</div>
+                            <div class="step-item">Initiate AI model training and optimization</div>
+                            <div class="step-item">Establish component sourcing partnerships</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
